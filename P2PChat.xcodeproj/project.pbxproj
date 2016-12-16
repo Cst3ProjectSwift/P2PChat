@@ -14,6 +14,7 @@
 		075FD3411A34B69500513A3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD33F1A34B69500513A3A /* LaunchScreen.xib */; };
 		075FD34D1A34B69500513A3A /* P2PChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD34C1A34B69500513A3A /* P2PChat.swift */; };
 		410934D31DF15B3A009A90D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 410934D21DF15B3A009A90D9 /* Default-568h@2x.png */; };
+		413C3B821DFA9D750051FC91 /* Roche_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 413C3B811DFA9D750051FC91 /* Roche_Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		075FD34B1A34B69500513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD34C1A34B69500513A3A /* P2PChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PChat.swift; sourceTree = "<group>"; };
 		410934D21DF15B3A009A90D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		413C3B811DFA9D750051FC91 /* Roche_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Roche_Logo.png; path = P2PChat/Roche_Logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		075FD3281A34B69500513A3A = {
 			isa = PBXGroup;
 			children = (
+				413C3B811DFA9D750051FC91 /* Roche_Logo.png */,
 				410934D21DF15B3A009A90D9 /* Default-568h@2x.png */,
 				075FD3331A34B69500513A3A /* P2PChat */,
 				075FD3491A34B69500513A3A /* P2PChatTests */,
@@ -87,8 +90,7 @@
 				075FD33F1A34B69500513A3A /* LaunchScreen.xib */,
 				075FD3341A34B69500513A3A /* Supporting Files */,
 			);
-			name = P2PChat;
-			path = ChatPeerToPeer;
+			path = P2PChat;
 			sourceTree = "<group>";
 		};
 		075FD3341A34B69500513A3A /* Supporting Files */ = {
@@ -105,8 +107,7 @@
 				075FD34C1A34B69500513A3A /* P2PChat.swift */,
 				075FD34A1A34B69500513A3A /* Supporting Files */,
 			);
-			name = P2PChatTests;
-			path = ChatPeerToPeerTests;
+			path = P2PChatTests;
 			sourceTree = "<group>";
 		};
 		075FD34A1A34B69500513A3A /* Supporting Files */ = {
@@ -164,7 +165,7 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Carlos Butron";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					075FD3301A34B69500513A3A = {
 						CreatedOnToolsVersion = 6.1;
@@ -205,6 +206,7 @@
 				075FD33C1A34B69500513A3A /* Main.storyboard in Resources */,
 				410934D31DF15B3A009A90D9 /* Default-568h@2x.png in Resources */,
 				075FD3411A34B69500513A3A /* LaunchScreen.xib in Resources */,
+				413C3B821DFA9D750051FC91 /* Roche_Logo.png in Resources */,
 				075FD33E1A34B69500513A3A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8585JEDSGW;
-				INFOPLIST_FILE = "$(SRCROOT)/ChatPeerToPeer/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/P2PChat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gbrun.jvreding.P2PChat;
@@ -370,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8585JEDSGW;
-				INFOPLIST_FILE = "$(SRCROOT)/ChatPeerToPeer/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/P2PChat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gbrun.jvreding.P2PChat;
