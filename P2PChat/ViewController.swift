@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  P2PChat
@@ -17,24 +18,48 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     var session: MCSession!
     var peerID: MCPeerID!
     
-    @IBAction func button(_ sender: UIButton) {
+    
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    @IBOutlet weak var chatTextView: UITextView!
+    @IBOutlet weak var chatScrollView: UIScrollView!
+    
+    @IBOutlet weak var sendenButton: UIButton!
+    @IBAction func openBrowserButtonClick(_ sender: UIButton) {
         showBrowserVC()
     }
     
-    @IBOutlet weak var textBox: UITextView!
-    @IBOutlet weak var sendText: UITextField!
+    @IBAction func sendButtonClick(){
+        self.sendMessage()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpMultipeer()
     }
     
+    // Textfeld bei Editierung hochfahren
+    func textFieldDidBeginEditing(_ sendText: UITextField) {
+        chatScrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
+    }
+    
+    
+    // MC(Multipeer Connectivity) aufsetzen
     func setUpMultipeer(){
+        // Eigene PeerId auf Gerätenamen setzen
         peerID = MCPeerID(displayName: UIDevice.current.name)
+        
+        // Session erstellen
         session = MCSession(peer: peerID)
         session.delegate = self
+        
+        // Browser erstellen welcher alle anderen Peers anzeigt
         browserVC = MCBrowserViewController(serviceType: "chat", session: session)
         browserVC.delegate = self
+        
+        //
         advertiserAssistant = MCAdvertiserAssistant(serviceType: "chat", discoveryInfo: nil, session: session)
         advertiserAssistant.start()
     }
@@ -43,9 +68,12 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
         super.didReceiveMemoryWarning()
     }
     
+    // Sende-Funktion
     func sendMessage(){
-        let message:String = self.sendText.text!
-        self.sendText.text = ""
+        let message:String = self.messageTextField.text!
+        self.messageTextField.text = ""
+        
+        // Nachricht für Übertragung encodieren
         let data :Data = message.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
         var error:NSError?
         do {
@@ -58,23 +86,25 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
         self.messageReception(message as NSString, peer: self.peerID)
     }
     
+    // Empfangs-Funktion
     func messageReception(_ message:NSString, peer:MCPeerID){
         var finalText:String
         if(peer == self.peerID){
-            finalText = "\nYo: \(message)"
+            finalText = "\nIch: \(message)"
         }
         else{
             finalText = "\n\(peer.displayName): \(message)"
         }
-        self.textBox.text =
-            self.textBox.text + (finalText as String)
+        self.chatTextView.text =
+            self.chatTextView.text + (finalText as String)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-        textField.resignFirstResponder()
+    func textFieldShouldReturn(_ sendText: UITextField) -> Bool{
+        sendText.resignFirstResponder()
         self.sendMessage()
         return true
     }
+    
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState){
     }
@@ -86,6 +116,7 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID:MCPeerID){
     }
+    
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress){
     }
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?){
@@ -95,11 +126,12 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
         self.dismissBrowserVC()
     }
     
-    // Notifies delegate that the user taps the cancel button.
+    // Browser mit verfügenbaren Peers schliessen
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController){
         self.dismissBrowserVC()
     }
     
+    // Browser mit verfügbaren Peers anzeigen
     func showBrowserVC(){
         self.present(self.browserVC, animated: true, completion: nil)
     }

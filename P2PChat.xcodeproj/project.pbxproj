@@ -14,7 +14,7 @@
 		075FD3411A34B69500513A3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075FD33F1A34B69500513A3A /* LaunchScreen.xib */; };
 		075FD34D1A34B69500513A3A /* P2PChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FD34C1A34B69500513A3A /* P2PChat.swift */; };
 		410934D31DF15B3A009A90D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 410934D21DF15B3A009A90D9 /* Default-568h@2x.png */; };
-		413C3B821DFA9D750051FC91 /* Roche_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 413C3B811DFA9D750051FC91 /* Roche_Logo.png */; };
+		41E668941E1D31EA00BBFC00 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E668931E1D31EA00BBFC00 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		075FD34B1A34B69500513A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075FD34C1A34B69500513A3A /* P2PChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2PChat.swift; sourceTree = "<group>"; };
 		410934D21DF15B3A009A90D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		413C3B811DFA9D750051FC91 /* Roche_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Roche_Logo.png; path = P2PChat/Roche_Logo.png; sourceTree = "<group>"; };
+		41E668931E1D31EA00BBFC00 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = P2PChat/icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		075FD3281A34B69500513A3A = {
 			isa = PBXGroup;
 			children = (
-				413C3B811DFA9D750051FC91 /* Roche_Logo.png */,
+				41E668931E1D31EA00BBFC00 /* icon.png */,
 				410934D21DF15B3A009A90D9 /* Default-568h@2x.png */,
 				075FD3331A34B69500513A3A /* P2PChat */,
 				075FD3491A34B69500513A3A /* P2PChatTests */,
@@ -171,6 +171,7 @@
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 8585JEDSGW;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					075FD3451A34B69500513A3A = {
 						CreatedOnToolsVersion = 6.1;
@@ -205,8 +206,8 @@
 			files = (
 				075FD33C1A34B69500513A3A /* Main.storyboard in Resources */,
 				410934D31DF15B3A009A90D9 /* Default-568h@2x.png in Resources */,
+				41E668941E1D31EA00BBFC00 /* icon.png in Resources */,
 				075FD3411A34B69500513A3A /* LaunchScreen.xib in Resources */,
-				413C3B821DFA9D750051FC91 /* Roche_Logo.png in Resources */,
 				075FD33E1A34B69500513A3A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8585JEDSGW;
 				INFOPLIST_FILE = "$(SRCROOT)/P2PChat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -371,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8585JEDSGW;
 				INFOPLIST_FILE = "$(SRCROOT)/P2PChat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
