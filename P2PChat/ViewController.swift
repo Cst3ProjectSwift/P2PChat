@@ -81,8 +81,8 @@ class ViewController: UIViewController,  MCSessionDelegate, MCBrowserViewControl
                 self.session.connectedPeers, with: MCSessionSendDataMode.unreliable)
         } catch let error1 as NSError {
             error = error1
+            NSLog("%@", error!)
         }
-        NSLog("%@", error!)
         self.messageReception(message as NSString, peer: self.peerID)
     }
     
